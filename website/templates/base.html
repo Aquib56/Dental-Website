@@ -4,12 +4,12 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="{% block meta_description %}Welcome To The Website Of Dr. John Elder DMD Dentist To The Stars!{% endblock %}">
+  <meta name="description" content="{% block meta_description %}Welcome To The Website {% endblock %}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title>{% block title %}Dr. John Elder DMD {% endblock %}</title>
+  <title>{% block title %}Dento{% endblock %}</title>
 
   <!-- Favicon -->
   <link rel="icon" href="{% static 'website/img/core-img/favicon.ico' %}">
@@ -91,7 +91,7 @@
             </div>
 
             <!-- Booking Now Button -->
-            <a href="#" class="btn dento-btn booking-btn">Booking Now</a>
+            <a href="{% url 'home' %}" class="btn dento-btn booking-btn">Booking Now</a>
           </nav>
         </div>
       </div>
@@ -118,9 +118,9 @@
         <div class="col-12 col-sm-6 col-lg-4">
           <div class="single-footer-widget">
             <a href="./index.html" class="d-block mb-4"><img src="{% static 'website/img/core-img/logo.png' %}" alt=""></a>
-            <p>Etiam sutor risus, dapibus act elefend katen, lacinia sitamet denim. Mauris sagittis kansa interdum dignissim.</p>
+            <p>Crafting Healthy Smiles, One Appointment at a Time.</p>
             <div class="footer-contact">
-              <p><i class="icon_pin"></i> 28 Jackson Street, Chicago, 7788569 USA</p>
+              <p><i class="icon_pin"></i> 0 Zerbert St. New York, New York, 12345</p>
               <p><i class="icon_phone"></i> +84. 2252. 2250. 122</p>
               <p><i class="icon_mail"></i> info.dento@gmail.com</p>
             </div>
@@ -150,19 +150,21 @@
             <!-- Widget Title -->
             <h5 class="widget-title">Quick Link</h5>
 
+
+            {% comment %} <ul id="nav">
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li><a href="{% url 'about' %}">About</a></li>
+              <li><a href="{% url 'service' %}">Service</a></li>
+              <li><a href="{% url 'pricing' %}">Pricing</a></li>
+              <li><a href="./contact.html">Contact</a></li> {% endcomment %}
+
             <!-- Quick Links Nav -->
             <nav>
               <ul class="quick-links">
-                <li><a href="#">About</a></li>
-                <li><a href="#">FAQs</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Policy</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Advisors</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Dentist</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Legals</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="{% url 'service' %}">Services</a></li>
+                <li><a href="{% url 'pricing' %}">Pricing</a></li>
               </ul>
             </nav>
           </div>

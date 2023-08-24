@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
-
+from dentist.settings import EMAIL_HOST
 def home(request):
 	return render(request, 'home.html', {})
 
@@ -10,13 +10,13 @@ def contact(request):
 		message_email = request.POST['message-email']
 		message = request.POST['message']
 
-		# # send an email
-		# send_mail(
-		# 	message_name, # subject
-		# 	message, # message
-		# 	message_email, # from email
-		# 	['john@codemy.com'], # To Email
-		# 	)
+		# send an email
+		send_mail(
+			message_name, # subject
+			message, # message
+			message_email, # from email
+			[''] # To Email
+			)
 
 		return render(request, 'contact.html', {'message_name': message_name})
 
@@ -45,14 +45,14 @@ def appointment(request):
 		your_message = request.POST['your-message']
 		
 		# send an email
-		# appointment = "Name: " + your_name + " Phone: " + your_phone + " Email: " + your_email + " Address: " + your_address + " Schedule: " + your_schedule + " Day: " + your_date + " Message: " + your_message
+		appointment = "Name: " + your_name + " Phone: " + your_phone + " Email: " + your_email + " Address: " + your_address + " Schedule: " + your_schedule + " Day: " + your_date + " Message: " + your_message
 
-		# send_mail(
-		# 	'Appointment Request', # subject
-		# 	appointment, # message
-		# 	your_email, # from email
-		# 	['john@codemy.com'], # To Email
-		# 	)
+		send_mail(
+			'Appointment Request', # subject
+			appointment, # message
+			your_email, # from email
+			[''], # To Email
+			)
 		
 		return render(request, 'appointment.html', {
 			'your_name': your_name,
